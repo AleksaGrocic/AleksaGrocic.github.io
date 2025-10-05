@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background-color: #1e202e;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: #5969cd;
+}
