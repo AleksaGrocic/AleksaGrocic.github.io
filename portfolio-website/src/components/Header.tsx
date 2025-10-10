@@ -1,7 +1,11 @@
-import React from "react";
+import Button from "./Button";
 
-function Header() {
-  return <div className="header"></div>;
+export default function Header() {
+  return (
+    <div className="header">
+      <Button name="Interests" />
+      <Button name="About me" />
+      <Button name="Contact" />
+    </div>
+  );
 }
-
-export default Header;
