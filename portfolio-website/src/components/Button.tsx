@@ -1,3 +1,15 @@
-export default function Button({ name }: { name: String }) {
-  return <button className="headerButton">{name}</button>;
+export default function Button({
+  name,
+  className,
+  onClick,
+}: {
+  name: string;
+  className: string;
+  onClick?: () => void;
+}) {
+  return (
+    <button className={className} onClick={onClick}>
+      {name}
+    </button>
+  );
 }

@@ -1,22 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+  font-family: Lexend;
+}
+
 html {
   margin: 0;
 }
 
 body {
   margin: 0;
-  background-color: #1e1f29;
-  font-family: Verdana;
+  background-color: #000000;
 }
 
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 100px;
   width: 100%;
+  background-color: #0a0a0f;
+}
+
+.headerName {
+  position: absolute;
+  left: 40px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.headerButtonsContainer {
+  display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  background-color: #5969cd;
-  /*background-image: linear-gradient(to bottom, #5969cd, rgba(255, 0, 0, 0));*/
+  width: 100%;
 }
 
 .headerButton {
@@ -32,12 +54,6 @@ body {
   cursor: pointer;
 }
 
-/*.headerName {
-  line-height: 100px;
-  width: 100%;
-  height: 100px;
-  margin: auto;
-  font-size: 20px;
-  color: white;
-  padding-left: 20px;
-}*/
+.selectedButton {
+  color: #5969cd;
+}
