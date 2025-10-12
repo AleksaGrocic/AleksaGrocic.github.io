@@ -1,36 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
 
 * {
-  font-family: Lexend;
+  font-family: "Lexend", sans-serif;
+  box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-}
-
+html,
 body {
   margin: 0;
-  background-color: #000000;
+  padding: 0;
+  background-color: #000;
 }
 
 .header {
   position: sticky;
   top: 0;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 0 40px;
   height: 100px;
   width: 100%;
   background-color: #0a0a0f;
+  z-index: 100;
 }
 
 .headerName {
   position: absolute;
-  left: 40px;
   font-size: 22px;
   font-weight: bold;
   color: white;
   margin: 0;
+  white-space: nowrap;
+  transition: color 0.2 ease;
+  user-select: none;
+}
+
+.headerName:hover {
+  color: #aab0ff;
 }
 
 .headerButtonsContainer {
@@ -42,18 +50,46 @@ body {
 }
 
 .headerButton {
-  height: 30px;
-  background-color: rgba(255, 0, 0, 0);
+  background-color: transparent;
   border: none;
   color: white;
   font-size: 14pt;
   font-weight: normal;
+  transition: color 0.2s ease;
 }
 
 .headerButton:hover {
   cursor: pointer;
+  color: #aab0ff;
 }
 
 .selectedButton {
-  color: #5969cd;
+  color: #5969cd !important;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  .headerName {
+    position: static;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .headerButtonsContainer {
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .headerButton {
+    font-size: 13pt;
+  }
 }
