@@ -1,14 +1,17 @@
-import { useState } from "react";
 import Button from "./Button";
 
-export default function Header() {
-  const [selectedButton, setSelectedButton] = useState<string>("Home");
-
+export default function Header({
+  selectedPage,
+  setSelectedPage,
+}: {
+  selectedPage: string;
+  setSelectedPage: (page: string) => void;
+}) {
   const handleClick = (buttonName: string) => {
-    setSelectedButton(buttonName);
+    setSelectedPage(buttonName);
   };
 
-  const buttons = ["Home", "About", "Skills", "Contact"];
+  const buttons = ["Home", "About", "Portfolio", "Contact"];
 
   return (
     <div className="header">
@@ -19,7 +22,7 @@ export default function Header() {
             key={name}
             name={name}
             className={`headerButton ${
-              selectedButton === name ? "selectedButton" : ""
+              selectedPage === name ? "selectedButton" : ""
             }`}
             onClick={() => handleClick(name)}
           />

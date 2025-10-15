@@ -67,6 +67,19 @@ body {
   color: #5969cd !important;
 }
 
+.homeContainer {
+  margin: 30px 200px;
+  padding: 5px 20px;
+  background-color: #0a0a0f;
+  border-radius: 10px;
+}
+
+.homeAbout {
+  color: white;
+}
+
+/*   CONDITIONAL FORMATTING   */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
