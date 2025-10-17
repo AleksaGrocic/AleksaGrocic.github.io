@@ -87,6 +87,7 @@ body {
   width: 100%;
   flex-wrap: wrap;
   text-align: center;
+  margin-top: 15px;
 }
 
 .homeBanner p {
