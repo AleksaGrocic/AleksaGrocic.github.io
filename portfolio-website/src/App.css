@@ -67,15 +67,43 @@ body {
   color: #5969cd !important;
 }
 
-.homeContainer {
-  margin: 30px 200px;
+.bodyContainer {
+  margin: 20px auto;
+  max-width: 1200px;
   padding: 5px 20px;
   background-color: #0a0a0f;
   border-radius: 10px;
 }
 
-.homeAbout {
+.bodyText {
   color: white;
+}
+
+.homeBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  width: 100%;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.homeBanner p {
+  color: white;
+  font-size: 30pt;
+  width: 400px;
+}
+
+.homeBanner img {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #5969cd;
+  border-radius: 100px;
+}
+
+.coloredWord {
+  color: #5969cd;
 }
 
 /*   CONDITIONAL FORMATTING   */
@@ -104,5 +132,20 @@ body {
 
   .headerButton {
     font-size: 13pt;
+  }
+
+  .homeBanner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .homeBanner p {
+    font-size: 16pt;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bodyContainer {
+    margin: 20px;
   }
 }
