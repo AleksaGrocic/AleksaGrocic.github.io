@@ -107,6 +107,15 @@ body {
   color: #5969cd;
 }
 
+.coloredWord.clickable {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.coloredWord.clickable:hover {
+  color: #8093ff;
+}
+
 /*   CONDITIONAL FORMATTING   */
 
 @media (max-width: 768px) {

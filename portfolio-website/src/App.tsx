@@ -12,13 +12,30 @@ export default function App() {
   const renderPage = () => {
     switch (selectedPage) {
       case "Home":
-        return <Home />;
+        return (
+          <Home selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+        );
       case "About":
-        return <About />;
+        return (
+          <About
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        );
       case "Portfolio":
-        return <Portfolio />;
+        return (
+          <Portfolio
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        );
       case "Contact":
-        return <Contact />;
+        return (
+          <Contact
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        );
       default:
         return <p>Page not found</p>;
     }
