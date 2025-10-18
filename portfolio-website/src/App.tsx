@@ -5,24 +5,21 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
-  // Helper to capitalize page name
   const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
-  // Initialize from URL hash (so refresh keeps same page)
   const [selectedPage, setSelectedPage] = useState<string>(() => {
     const pageFromHash = window.location.hash.replace("#", "");
     return pageFromHash ? capitalize(pageFromHash) : "Home";
   });
 
-  // Update URL hash when page changes
   const changePage = (page: string) => {
     setSelectedPage(page);
     window.location.hash = page.toLowerCase();
   };
 
-  // Handle back/forward button
   useEffect(() => {
     const handleHashChange = () => {
       const pageFromHash = window.location.hash.replace("#", "");
@@ -54,6 +51,7 @@ export default function App() {
     <>
       <Header selectedPage={selectedPage} setSelectedPage={changePage} />
       {renderPage()}
+      <Footer />
     </>
   );
 }

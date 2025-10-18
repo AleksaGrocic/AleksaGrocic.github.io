@@ -116,6 +116,54 @@ body {
   color: #8093ff;
 }
 
+.educationContainer {
+  display: flex;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.educationCard {
+  line-height: 26px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: white;
+  background-color: #11111a;
+  border-radius: 8px;
+  padding: 15px 20px;
+  flex: 1 1 45%; /* each takes up about half the width */
+  min-width: 300px; /* prevents shrinking too small */
+  font-size: 12pt;
+  margin-top: 0;
+}
+
+.educationDegree {
+  font-weight: bold;
+  color: #5969cd;
+}
+
+.educationYears {
+  font-size: 12pt;
+  color: #707085;
+}
+
+.footer {
+  background-color: #0a0a0f;
+  height: 24px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.footerText {
+  font-size: 14px;
+  margin: 0;
+  color: #4b4b63;
+}
+
 /*   CONDITIONAL FORMATTING   */
 
 @media (max-width: 768px) {
@@ -151,6 +199,16 @@ body {
 
   .homeBanner p {
     font-size: 16pt;
+  }
+
+  .educationCard {
+    font-size: 12pt;
+    line-height: 22px;
+  }
+
+  .educationYears {
+    display: block; /* move the year to its own line */
+    margin-top: 5px;
   }
 }
 
