@@ -23,5 +23,15 @@
       "type": "Internship",
       "timePeriod": "July 2025 - Ongoing"
     }
-  ]
+  ],
+  "skills": {
+    "Programming languages": ["JavaScript", "Java", "C", "C++", "C#", "Python"],
+    "Frameworks and libraries": ["React", "Angular", "Express.js", "Spring"],
+    "Other skills": [
+      "Adobe Photoshop",
+      "Adobe Lightroom",
+      "Adobe Premiere Pro",
+      "MS Office"
+    ]
+  }
 }
