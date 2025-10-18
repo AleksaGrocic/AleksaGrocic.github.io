@@ -75,7 +75,7 @@ body {
   border-radius: 10px;
 }
 
-.bodyText {
+.bodyContainer {
   color: white;
 }
 
@@ -140,6 +140,20 @@ body {
   min-width: 300px;
   font-size: 12pt;
   margin-top: 0;
+}
+
+.skillsContainer {
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.skillsContainer .aboutCard {
+  flex: 1 1 30%;
+  max-width: 32%;
+}
+
+.skillsContainer ul {
+  margin-bottom: 0;
 }
 
 .aboutCardTitle {

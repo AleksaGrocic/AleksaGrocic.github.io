@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Body from "../components/Body";
 
 interface EducationItem {
   degree: string;
@@ -9,10 +8,15 @@ interface EducationItem {
   years: string;
 }
 
+interface Skills {
+  [category: string]: string[];
+}
+
 interface AboutData {
   intro: string;
   education: EducationItem[];
   workExperience: any[];
+  skills: Skills;
 }
 
 export default function About() {
@@ -28,7 +32,8 @@ export default function About() {
 
   return (
     <div className="bodyContainer">
-      <Body data={data.intro} />
+      <p>{data.intro}</p>
+
       <h3 className="subtitle">Education</h3>
       <div className="aboutCategoryContainer">
         {data.education.map((item, index) => (
@@ -63,6 +68,20 @@ export default function About() {
             </pre>
           ))
         )}
+      </div>
+
+      <h3 className="subtitle">Skills</h3>
+      <div className="aboutCategoryContainer skillsContainer">
+        {Object.entries(data.skills).map(([category, skillList], index) => (
+          <div key={index} className="aboutCard">
+            <span className="aboutCardTitle">{category}</span>
+            <ul>
+              {skillList.map((skill, i) => (
+                <li key={i}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );

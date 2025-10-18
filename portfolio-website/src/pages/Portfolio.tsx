@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
-import Body from "../components/Body";
 
 export default function Portfolio() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState<{ page: string } | null>(null);
 
   useEffect(() => {
-    fetch("/content/portfolio.md")
-      .then((res) => res.text())
-      .then((text) => setData(text));
+    fetch("/content/portfolio.json")
+      .then((res) => res.json())
+      .then((json) => setData(json));
   }, []);
 
-  return <Body data={data} />;
+  if (!data) return null;
+
+  return (
+    <div className="bodyContainer">
+      <p>{data.page}</p>
+    </div>
+  );
 }

@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
-import Body from "../components/Body";
 
 export default function Contact() {
-  const [data, setData] = useState("");
+  const [data, setData] = useState<{ page: string } | null>(null);
 
   useEffect(() => {
-    fetch("/content/contact.md")
-      .then((res) => res.text())
-      .then((text) => setData(text));
+    fetch("/content/contact.json")
+      .then((res) => res.json())
+      .then((json) => setData(json));
   }, []);
 
-  return <Body data={data} />;
+  if (!data) return null;
+
+  return (
+    <div className="bodyContainer">
+      <p>{data.page}</p>
+    </div>
+  );
 }
