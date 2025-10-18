@@ -1,0 +1,27 @@
+{
+  "intro": "I'm Aleksa Gročić, a bachelor of software engineering, currently in my master's studies. I'm a web developer with a focus on frontend and visual design, but I also delve into backend development and databases. My other interests include photography and video editing.",
+  "education": [
+    {
+      "degree": "Bachelor's degree",
+      "university": "Singidunum University",
+      "faculty": "Faculty of Technical Sciences",
+      "module": "Software and Information Engineering",
+      "years": "2020 - 2024"
+    },
+    {
+      "degree": "Master's degree",
+      "university": "University of Belgrade",
+      "faculty": "Faculty of Organizational Sciences",
+      "module": "Information Systems and Technologies",
+      "years": "2024 - Ongoing"
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "Bosch",
+      "position": "Quality Assurance",
+      "type": "Internship",
+      "timePeriod": "July 2025 - Ongoing"
+    }
+  ]
+}
