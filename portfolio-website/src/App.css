@@ -116,14 +116,18 @@ body {
   color: #8093ff;
 }
 
-.educationContainer {
+.subtitle {
+  color: white;
+}
+
+.aboutCategoryContainer {
   display: flex;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
 }
 
-.educationCard {
+.aboutCard {
   line-height: 26px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -131,18 +135,19 @@ body {
   background-color: #11111a;
   border-radius: 8px;
   padding: 15px 20px;
-  flex: 1 1 45%; /* each takes up about half the width */
-  min-width: 300px; /* prevents shrinking too small */
+  flex: 1 1 45%;
+  max-width: 48%;
+  min-width: 300px;
   font-size: 12pt;
   margin-top: 0;
 }
 
-.educationDegree {
+.aboutCardTitle {
   font-weight: bold;
   color: #5969cd;
 }
 
-.educationYears {
+.aboutCardYears {
   font-size: 12pt;
   color: #707085;
 }
@@ -201,13 +206,13 @@ body {
     font-size: 16pt;
   }
 
-  .educationCard {
+  .aboutCard {
     font-size: 12pt;
     line-height: 22px;
   }
 
   .educationYears {
-    display: block; /* move the year to its own line */
+    display: block;
     margin-top: 5px;
   }
 }

@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import ReactMarkdown, { Components } from "react-markdown";
-import rehypeRaw from "rehype-raw";
 
 export default function Home({
   selectedPage,
@@ -9,33 +7,21 @@ export default function Home({
   selectedPage: string;
   setSelectedPage: (page: string) => void;
 }) {
-  const [data, setData] = useState("");
+  const [data, setData] = useState<{ text: string; footer: string } | null>(
+    null
+  );
 
   const handleClick = (buttonName: string) => {
     setSelectedPage(buttonName);
   };
 
   useEffect(() => {
-    fetch("/content/home.md")
-      .then((res) => res.text())
-      .then((text) => setData(text));
+    fetch("/content/home.json")
+      .then((res) => res.json())
+      .then((json) => setData(json));
   }, []);
 
-  const components: Components = {
-    span: ({ node, ...props }) => {
-      const page = (props as any)["data-page"];
-      const isClickable = Boolean(page);
-
-      return (
-        <span
-          className={`coloredWord ${isClickable ? "clickable" : ""}`}
-          onClick={isClickable ? () => handleClick(page) : undefined}
-        >
-          {props.children}
-        </span>
-      );
-    },
-  };
+  if (!data) return null;
 
   return (
     <>
@@ -49,9 +35,31 @@ export default function Home({
 
       <div className="bodyContainer">
         <div className="bodyText">
-          <ReactMarkdown rehypePlugins={[rehypeRaw]} components={components}>
-            {data}
-          </ReactMarkdown>
+          <p>{data.text}</p>
+          <p>
+            Feel free to browse my website! The{" "}
+            <span
+              className="coloredWord clickable"
+              onClick={() => handleClick("About")}
+            >
+              About
+            </span>{" "}
+            tab will tell you more about me. You can find my work on the{" "}
+            <span
+              className="coloredWord clickable"
+              onClick={() => handleClick("Portfolio")}
+            >
+              Portfolio
+            </span>{" "}
+            tab, as well as my contact information on the{" "}
+            <span
+              className="coloredWord clickable"
+              onClick={() => handleClick("Contact")}
+            >
+              Contact
+            </span>{" "}
+            tab!
+          </p>
         </div>
       </div>
     </>
