@@ -1,19 +1,8 @@
 import { useEffect, useState } from "react";
-import ReactMarkdown, { Components } from "react-markdown";
-import rehypeRaw from "rehype-raw";
+import Body from "../components/Body";
 
-export default function About({
-  selectedPage,
-  setSelectedPage,
-}: {
-  selectedPage: string;
-  setSelectedPage: (page: string) => void;
-}) {
+export default function About() {
   const [data, setData] = useState("");
-
-  const handleClick = (buttonName: string) => {
-    setSelectedPage(buttonName);
-  };
 
   useEffect(() => {
     fetch("/content/about.md")
@@ -21,29 +10,5 @@ export default function About({
       .then((text) => setData(text));
   }, []);
 
-  const components: Components = {
-    span: ({ node, ...props }) => {
-      const page = (props as any)["data-page"];
-      const isClickable = Boolean(page);
-
-      return (
-        <span
-          className={`coloredWord ${isClickable ? "clickable" : ""}`}
-          onClick={isClickable ? () => handleClick(page) : undefined}
-        >
-          {props.children}
-        </span>
-      );
-    },
-  };
-
-  return (
-    <div className="bodyContainer">
-      <div className="bodyText">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} components={components}>
-          {data}
-        </ReactMarkdown>
-      </div>
-    </div>
-  );
+  return <Body data={data} />;
 }
