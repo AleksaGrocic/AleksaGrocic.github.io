@@ -12,6 +12,11 @@ body {
   background-color: #000;
 }
 
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .header {
   position: sticky;
   top: 0;
@@ -23,7 +28,7 @@ body {
   height: 100px;
   width: 100%;
   background-color: #0a0a0f;
-  z-index: 100;
+  z-index: 0;
 }
 
 .headerName {
