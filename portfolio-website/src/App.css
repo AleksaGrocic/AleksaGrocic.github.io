@@ -172,6 +172,34 @@ body {
   color: #707085;
 }
 
+.socialMediaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.socialMediaContainer pre {
+  flex-direction: row;
+  margin: 0;
+}
+
+.socialMediaContainer img {
+  vertical-align: bottom;
+  height: 20px;
+  width: 20px;
+}
+
+.socialMediaContainer p {
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+
+.socialMediaContainer a {
+  margin-left: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
 .footer {
   background-color: #0a0a0f;
   height: 24px;

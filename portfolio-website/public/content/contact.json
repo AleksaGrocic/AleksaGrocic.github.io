@@ -1,9 +1,17 @@
 {
-  "e-mail": "agrocic@gmail.com",
+  "email": "agrocic@gmail.com",
   "linkedin": "linkedin.com/in/aleksa-gročić-9b0117301",
-  "instagram": {
-    "main": "https://www.instagram.com/a_grocic?igsh=MWU2N3JuNmhkY2E1ag==",
-    "photography": "https://www.instagram.com/ageofpixels?igsh=MTM5NWdmemhmcTZjbw=="
-  },
-  "cv": ""
+  "instagram": [
+    {
+      "name": "@a_grocic",
+      "type": "Personal",
+      "link": "https://www.instagram.com/a_grocic?igsh=MWU2N3JuNmhkY2E1ag=="
+    },
+    {
+      "name": "@ageofpixels",
+      "type": "Photography",
+      "link": "https://www.instagram.com/ageofpixels?igsh=MTM5NWdmemhmcTZjbw=="
+    }
+  ],
+  "cv": "/assets/CV_Aleksa_Gročić.pdf"
 }
