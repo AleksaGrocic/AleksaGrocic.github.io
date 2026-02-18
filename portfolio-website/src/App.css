@@ -75,10 +75,14 @@ body {
 .bodyContainer {
   max-width: 1200px;
   margin: 20px auto 40px auto;
-  padding: 5px 20px 20px 20px;
+  padding: 20px;
   background-color: #0a0a0f;
   border-radius: 10px;
   color: white;
+}
+
+.bodyContainer p {
+  margin-top: 0;
 }
 
 .bodyText p {
@@ -120,6 +124,11 @@ body {
 
 .coloredWord.clickable:hover {
   color: #8093ff;
+}
+
+.grayWord {
+  color: #666666;
+  font-style: italic;
 }
 
 .subtitle {
@@ -176,6 +185,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 8px;
 }
 
 .socialMediaContainer pre {
@@ -190,12 +200,11 @@ body {
 }
 
 .socialMediaContainer p {
-  margin-bottom: 8px;
-  margin-top: 8px;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .socialMediaContainer a {
-  margin-left: 8px;
   text-decoration: none;
   color: inherit;
 }

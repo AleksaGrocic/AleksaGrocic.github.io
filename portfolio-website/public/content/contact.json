@@ -1,15 +1,16 @@
 {
   "email": "agrocic@gmail.com",
-  "linkedin": "linkedin.com/in/aleksa-gročić-9b0117301",
+  "github": "https://github.com/AleksaGrocic",
+  "linkedin": "https://www.linkedin.com/in/aleksa-gro%C4%8Di%C4%87-9b0117301/",
   "instagram": [
     {
       "name": "@a_grocic",
-      "type": "Personal",
+      "type": "personal",
       "link": "https://www.instagram.com/a_grocic?igsh=MWU2N3JuNmhkY2E1ag=="
     },
     {
       "name": "@ageofpixels",
-      "type": "Photography",
+      "type": "photography",
       "link": "https://www.instagram.com/ageofpixels?igsh=MTM5NWdmemhmcTZjbw=="
     }
   ],
