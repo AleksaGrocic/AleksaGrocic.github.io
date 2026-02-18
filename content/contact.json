@@ -1,3 +1,18 @@
 {
-  "page": "Contact"
+  "email": "agrocic@gmail.com",
+  "github": "https://github.com/AleksaGrocic",
+  "linkedin": "https://www.linkedin.com/in/aleksa-gro%C4%8Di%C4%87-9b0117301/",
+  "instagram": [
+    {
+      "name": "@a_grocic",
+      "type": "personal",
+      "link": "https://www.instagram.com/a_grocic?igsh=MWU2N3JuNmhkY2E1ag=="
+    },
+    {
+      "name": "@ageofpixels",
+      "type": "photography",
+      "link": "https://www.instagram.com/ageofpixels?igsh=MTM5NWdmemhmcTZjbw=="
+    }
+  ],
+  "cv": "/assets/CV_Aleksa_Gročić.pdf"
 }
