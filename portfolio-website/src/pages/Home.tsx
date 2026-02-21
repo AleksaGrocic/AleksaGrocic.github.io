@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function Home({
-  selectedPage,
   setSelectedPage,
 }: {
   selectedPage: string;
