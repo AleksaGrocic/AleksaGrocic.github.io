@@ -34,12 +34,12 @@ export default function Contact() {
           <img src="/assets/cv.png" alt="CV icon"/>
           <span className="coloredWord"> My CV</span>
         </a>
-        <p>Instagram</p>
+        {/* <p>Instagram</p> */}
         {data.instagram.map((instagram, i) => (
           <pre key={i}>
             <a href={instagram.link} target="_blank" rel="noreferrer">
               <img src="/assets/instagram.svg" alt="Instagram icon"/>
-              <span className="coloredWord"> {instagram.name}</span> <span className="grayWord">({instagram.type})</span>
+              <span className="coloredWord"> Instagram</span> <span className="grayWord">({instagram.type})</span>
             </a>
           </pre>
         ))}
