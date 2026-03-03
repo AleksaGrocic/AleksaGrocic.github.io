@@ -157,6 +157,11 @@ body {
   margin-top: 0;
 }
 
+.aboutCard.clickable:hover {
+  filter:brightness(120%);
+  cursor: pointer;
+}
+
 .skillsContainer {
   justify-content: flex-start;
   gap: 15px;

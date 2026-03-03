@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ReactModal from 'react-modal';
 
 interface EducationItem {
   degree: string;
@@ -21,6 +22,7 @@ interface AboutData {
 
 export default function About() {
   const [data, setData] = useState<AboutData | null>(null);
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     fetch("/content/about.json")
@@ -31,6 +33,7 @@ export default function About() {
   if (!data) return null;
 
   return (
+    <>
     <div className="bodyContainer">
       <p>{data.intro}</p>
 
@@ -57,7 +60,7 @@ export default function About() {
           <p>No work experience yet.</p>
         ) : (
           data.workExperience.map((job, i) => (
-            <pre key={i} className="aboutCard">
+            <pre key={i} className="aboutCard clickable" onClick={() => setModal(true)}>
               <span className="aboutCardTitle">{job.company}</span>
               <br />
               {job.position}
@@ -84,5 +87,9 @@ export default function About() {
         ))}
       </div>
     </div>
+    <ReactModal className="bodyContainer" isOpen={modal} onRequestClose={() => setModal(false)}>
+        <button onClick={() => setModal(false)}>Close</button>
+    </ReactModal>
+    </>
   );
 }

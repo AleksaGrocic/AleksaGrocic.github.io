@@ -21,7 +21,12 @@
       "company": "Bosch",
       "position": "Supplier Quality Assurance",
       "type": "Internship",
-      "timePeriod": "July 2025 - Ongoing"
+      "timePeriod": "July 2025 - Ongoing",
+      "detailed": [
+        {
+          "text": "Detailed work experience"
+        }
+      ]
     }
   ],
   "skills": {
