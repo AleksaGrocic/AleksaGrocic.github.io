@@ -129,7 +129,7 @@ export default function About() {
             padding: "25px",
             borderRadius: "10px",
             backgroundColor: "#0a0a0f",
-            outline: "none",
+            outline: "1px solid #1b1b25",
           },
         }}
       >
@@ -149,7 +149,7 @@ export default function About() {
             <p className="aboutCardYears">{selectedJob.timePeriod}</p>
 
             <h3>Details</h3>
-            <ul>
+            <ul className="jobDetails">
               {selectedJob.detailed.flatMap((detail, index) =>
                 detail.text
                   .split(". ")

@@ -29,6 +29,7 @@ body {
   width: 100%;
   background-color: #0a0a0f;
   z-index: 0;
+  border-bottom: 1px solid #1b1b25;
 }
 
 .headerName {
@@ -79,6 +80,7 @@ body {
   background-color: #0a0a0f;
   border-radius: 10px;
   color: white;
+  border: 1px solid #1b1b25;
 }
 
 .bodyContainer p {
@@ -324,4 +326,8 @@ body {
     left: 0;
     font-size: 24px;
   }
+}
+
+.jobDetails {
+  line-height: 1.5;
 }
