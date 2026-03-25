@@ -34,7 +34,9 @@ interface AboutData {
 
 export default function About() {
   const [data, setData] = useState<AboutData | null>(null);
-  const [selectedJob, setSelectedJob] = useState<WorkExperienceItem | null>(null);
+  const [selectedJob, setSelectedJob] = useState<WorkExperienceItem | null>(
+    null,
+  );
 
   useEffect(() => {
     fetch("/content/about.json")
@@ -113,28 +115,51 @@ export default function About() {
         style={{
           overlay: {
             backgroundColor: "rgba(0, 0, 0, 0.85)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           },
           content: {
-            width: "600px",
-            height: "800px",
+            position: "relative",
+            inset: "auto",
+            width: "90%",
+            maxWidth: "900px",
+            maxHeight: "90vh",
+            overflowY: "auto",
+            padding: "25px",
+            borderRadius: "10px",
+            backgroundColor: "#0a0a0f",
             outline: "none",
           },
         }}
       >
         {selectedJob && (
           <>
-            <button onClick={() => setSelectedJob(null)}>Close</button>
-
-            <h2>{selectedJob.company}</h2>
+            <div className="modalHeader">
+              <h2 className="coloredWord">{selectedJob.company}</h2>
+              <button
+                className="modalClose"
+                onClick={() => setSelectedJob(null)}
+              >
+                ×
+              </button>
+            </div>
             <p>{selectedJob.position}</p>
             <p>{selectedJob.type}</p>
-            <p>{selectedJob.timePeriod}</p>
+            <p className="aboutCardYears">{selectedJob.timePeriod}</p>
 
             <h3>Details</h3>
             <ul>
-              {selectedJob.detailed.map((detail, index) => (
-                <li key={`${detail.text}-${index}`}>{detail.text}</li>
-              ))}
+              {selectedJob.detailed.flatMap((detail, index) =>
+                detail.text
+                  .split(". ")
+                  .filter((line) => line.trim() !== "")
+                  .map((line, i) => (
+                    <li key={`${index}-${i}`}>
+                      {line.endsWith(".") ? line : line + "."}
+                    </li>
+                  )),
+              )}
             </ul>
           </>
         )}
