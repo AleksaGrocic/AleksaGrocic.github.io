@@ -29,7 +29,7 @@ body {
   width: 100%;
   background-color: #0a0a0f;
   z-index: 0;
-  border-bottom: 1px solid #1b1b25;
+  border-bottom: 1px solid #1e1e29;
 }
 
 .headerName {
@@ -80,7 +80,7 @@ body {
   background-color: #0a0a0f;
   border-radius: 10px;
   color: white;
-  border: 1px solid #1b1b25;
+  border: 1px solid #1e1e29;
 }
 
 .bodyContainer p {
@@ -128,7 +128,7 @@ body {
   color: #8093ff;
 }
 
-.grayWord {
+.italicWord {
   color: #666666;
   font-style: italic;
 }
@@ -160,8 +160,9 @@ body {
 }
 
 .aboutCard.clickable:hover {
-  filter: brightness(120%);
+  background-color: #141420;
   cursor: pointer;
+  outline: 1px solid #1e1e29;
 }
 
 .skillsContainer {
@@ -290,7 +291,6 @@ body {
 
 .modalHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
@@ -300,6 +300,10 @@ body {
 }
 
 .modalClose {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
   background: none;
   border: none;
   color: white;
@@ -307,10 +311,11 @@ body {
   cursor: pointer;
   line-height: 1;
   padding: 0;
+  z-index: 10;
 }
 
 .modalClose:hover {
-  color: #aab0ff;
+  color: #ff4646d7;
 }
 
 @media (max-width: 500px) {
@@ -328,6 +333,91 @@ body {
   }
 }
 
-.jobDetails {
+.jobDetails li {
   line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.jobDetails li:last-child {
+  margin-bottom: 0;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px; /* fine-tune this */
+}
+
+.infoIcon {
+  display: flex; /* better than inline-flex here */
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  font-size: 11px; /* slightly smaller for better centering */
+  line-height: 1; /* prevents vertical shift */
+
+  border-radius: 50%;
+  border: 1px solid #5969cd;
+  color: #5969cd;
+
+  transform-origin: center; /* ensures clean scaling */
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.clickable:hover .infoIcon {
+  transform: scale(1.2);
+  background-color: rgba(89, 105, 205, 0.1);
+}
+
+.infoIconWrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Tooltip text */
+.tooltipText {
+  position: absolute;
+  bottom: 130%; /* above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: #1b1b25;
+  color: white;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  transform: translateX(-50%) translateY(5px);
+}
+
+/* Tooltip arrow */
+.tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1b1b25 transparent transparent transparent;
+}
+
+/* Show on hover */
+.infoIconWrapper:hover .tooltipText {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }

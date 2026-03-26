@@ -80,8 +80,15 @@ export default function About() {
                 className="aboutCard clickable"
                 onClick={() => setSelectedJob(job)}
               >
-                <span className="aboutCardTitle">{job.company}</span>
-                <br />
+                <span className="cardHeader">
+                  <span className="aboutCardTitle">{job.company}</span>
+                  <span className="infoIconWrapper">
+                    <span className="infoIcon">
+                      <span className="infoIconInner">i</span>
+                    </span>
+                    <span className="tooltipText">View details</span>
+                  </span>
+                </span>
                 {job.position}
                 <br />
                 {job.type}
@@ -141,7 +148,7 @@ export default function About() {
                 className="modalClose"
                 onClick={() => setSelectedJob(null)}
               >
-                ×
+                ⨯
               </button>
             </div>
             <p>{selectedJob.position}</p>

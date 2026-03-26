@@ -23,23 +23,23 @@ export default function Contact() {
     <div className="bodyContainer">
       <div className="socialMediaContainer">
         <a href={data.github} target="_blank" rel="noreferrer">
-          <img src="/assets/github.png" alt="Github icon"/>
+          <img src="/assets/github.png" alt="Github icon" />
           <span className="coloredWord"> Github</span>
         </a>
         <a href={data.linkedin} target="_blank" rel="noreferrer">
-          <img src="/assets/linkedin.png" alt="LinkedIn icon"/>
+          <img src="/assets/linkedin.png" alt="LinkedIn icon" />
           <span className="coloredWord"> LinkedIn</span>
         </a>
         <a href={data.cv} target="_blank" rel="noreferrer">
-          <img src="/assets/cv.png" alt="CV icon"/>
+          <img src="/assets/cv.png" alt="CV icon" />
           <span className="coloredWord"> My CV</span>
         </a>
-        {/* <p>Instagram</p> */}
         {data.instagram.map((instagram, i) => (
           <pre key={i}>
             <a href={instagram.link} target="_blank" rel="noreferrer">
-              <img src="/assets/instagram.svg" alt="Instagram icon"/>
-              <span className="coloredWord"> Instagram</span> <span className="grayWord">({instagram.type})</span>
+              <img src="/assets/instagram.svg" alt="Instagram icon" />
+              <span className="coloredWord"> Instagram</span>{" "}
+              <span className="italicWord">({instagram.type})</span>
             </a>
           </pre>
         ))}
