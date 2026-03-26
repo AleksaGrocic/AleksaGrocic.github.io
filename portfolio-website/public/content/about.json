@@ -21,7 +21,7 @@
       "company": "Bosch",
       "position": "Supplier Quality Assurance",
       "type": "Internship",
-      "timePeriod": "July 2025 - Ongoing",
+      "timePeriod": "June 2025 - Ongoing",
       "detailed": [
         {
           "text": "Executed preventive quality activities in SAP, maintaining accurate supplier quality records. Processed supplier 3D notifications and coordinated corrective actions with claim managers. Supported claim managers in 8D methodology, 5 Why, and Ishikawa to resolve recurring defects. Developed VBA tools to automate Excel reporting and data consolidation. Delivered weekly and monthly dashboards on surface defects and incoming inspection outcomes. Planned laboratory capacity and scheduled measurement requests per drawings and test specifications. Managed lab assets, including inventory scope, calibration tracking, and preventive maintenance. Authored work instructions and trained measurement technicians on new procedures. Created process flowcharts and supported 5S implementation within the laboratory. Collaborated cross-functionally to align inspection plans with supplier quality requirements."
@@ -30,14 +30,38 @@
     }
   ],
   "skills": {
-    "Programming languages": ["JavaScript", "Java", "C", "C++", "C#", "Python"],
-    "Frameworks and libraries": ["React", "Angular", "Express.js", "Spring"],
-    "Other skills": [
+    "Programming languages": [
+      "JavaScript",
+      "Java",
+      "C",
+      "C++",
+      "C#",
+      "Python",
+      "Kotlin"
+    ],
+    "Frameworks and libraries": [
+      "React",
+      "Angular",
+      "Express.js",
+      "Spring",
+      "Jetpack Compose"
+    ],
+    "Notable software": [
       "MS Office",
+      "SAP",
       "Adobe Photoshop",
       "Adobe Lightroom",
       "Adobe Premiere Pro",
       "Davinci Resolve"
+    ],
+    "Soft skills": [
+      "Problem solving",
+      "Attention to detail",
+      "Effective communication",
+      "Adaptability",
+      "Critical thinking",
+      "Teamwork",
+      "Good with a camera"
     ]
   }
 }

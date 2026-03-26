@@ -7,7 +7,7 @@ export default function Home({
   setSelectedPage: (page: string) => void;
 }) {
   const [data, setData] = useState<{ text: string; footer: string } | null>(
-    null
+    null,
   );
 
   const handleClick = (buttonName: string) => {
@@ -32,7 +32,7 @@ export default function Home({
         <img src="/assets/Me.JPG" alt="Me" />
       </div>
 
-      <div className="bodyContainer">
+      <div className="bodyContainer homeBodyContainer">
         <div className="bodyText">
           <p>{data.text}</p>
           <p>

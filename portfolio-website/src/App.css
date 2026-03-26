@@ -17,19 +17,40 @@ body {
   overflow-x: hidden;
 }
 
+.bodyContainer {
+  max-width: 1200px;
+  margin: 20px auto 40px auto;
+  padding: 20px;
+  background-color: #0a0a0f;
+  border-radius: 10px;
+  color: white;
+  border: 1px solid #1e1e29;
+}
+
+.homeBodyContainer {
+  max-width: 800px;
+}
+
+.bodyContainer p {
+  margin-top: 0;
+}
+
+.bodyText p {
+  margin-bottom: 0;
+}
+
 .header {
   position: sticky;
   top: 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   height: 100px;
   width: 100%;
   background-color: #0a0a0f;
-  z-index: 0;
   border-bottom: 1px solid #1e1e29;
+  z-index: 0;
 }
 
 .headerName {
@@ -39,8 +60,8 @@ body {
   color: white;
   margin: 0;
   white-space: nowrap;
-  transition: color 0.2 ease;
   user-select: none;
+  transition: color 0.2s ease;
 }
 
 .headerName:hover {
@@ -60,7 +81,6 @@ body {
   border: none;
   color: white;
   font-size: 14pt;
-  font-weight: normal;
   transition: color 0.2s ease;
 }
 
@@ -71,24 +91,6 @@ body {
 
 .selectedButton {
   color: #5969cd !important;
-}
-
-.bodyContainer {
-  max-width: 1200px;
-  margin: 20px auto 40px auto;
-  padding: 20px;
-  background-color: #0a0a0f;
-  border-radius: 10px;
-  color: white;
-  border: 1px solid #1e1e29;
-}
-
-.bodyContainer p {
-  margin-top: 0;
-}
-
-.bodyText p {
-  margin-bottom: 0;
 }
 
 .homeBanner {
@@ -145,18 +147,18 @@ body {
 }
 
 .aboutCard {
-  line-height: 26px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  color: white;
-  background-color: #11111a;
-  border-radius: 8px;
-  padding: 15px 20px;
   flex: 1 1 45%;
   max-width: 48%;
   min-width: 300px;
-  font-size: 12pt;
   margin-top: 0;
+  padding: 15px 20px;
+  background-color: #11111a;
+  border-radius: 8px;
+  color: white;
+  font-size: 12pt;
+  line-height: 26px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .aboutCard.clickable:hover {
@@ -165,7 +167,19 @@ body {
   outline: 1px solid #1e1e29;
 }
 
+.aboutCardTitle {
+  font-weight: bold;
+  color: #5969cd;
+}
+
+.aboutCardYears {
+  font-size: 12pt;
+  color: #707085;
+}
+
 .skillsContainer {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   gap: 15px;
 }
@@ -179,16 +193,6 @@ body {
   margin-bottom: 0;
 }
 
-.aboutCardTitle {
-  font-weight: bold;
-  color: #5969cd;
-}
-
-.aboutCardYears {
-  font-size: 12pt;
-  color: #707085;
-}
-
 .socialMediaContainer {
   display: flex;
   flex-direction: column;
@@ -197,7 +201,6 @@ body {
 }
 
 .socialMediaContainer pre {
-  flex-direction: row;
   margin: 0;
 }
 
@@ -208,8 +211,7 @@ body {
 }
 
 .socialMediaContainer p {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
 }
 
 .socialMediaContainer a {
@@ -218,30 +220,138 @@ body {
 }
 
 .footer {
-  background-color: #0a0a0f;
-  height: 24px;
-  width: 100%;
   position: fixed;
   bottom: 0;
+  width: 100%;
+  height: 24px;
   padding: 5px;
   display: flex;
   align-items: center;
+  background-color: #0a0a0f;
 }
 
 .footerText {
-  font-size: 14px;
   margin: 0;
+  font-size: 14px;
   color: #4b4b63;
 }
 
-/*   CONDITIONAL FORMATTING   */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modalHeader h2 {
+  margin-top: 0;
+}
+
+.modalClose {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  z-index: 10;
+}
+
+.modalClose:hover {
+  color: #ff4646d7;
+}
+
+.jobDetails li {
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.jobDetails li:last-child {
+  margin-bottom: 0;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.infoIconWrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.infoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  line-height: 1;
+  border-radius: 50%;
+  border: 1px solid #5969cd;
+  color: #5969cd;
+  transform-origin: center;
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.clickable:hover .infoIcon {
+  transform: scale(1.2);
+  background-color: rgba(89, 105, 205, 0.1);
+}
+
+.tooltipText {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
+  background-color: #1b1b25;
+  color: white;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.tooltipText::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1b1b25 transparent transparent transparent;
+}
+
+.infoIconWrapper:hover .tooltipText {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 1200px) {
+  .bodyContainer {
+    margin: 20px;
+    padding: 5px 20px 20px 20px;
+  }
+}
 
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100px;
     padding: 15px 20px;
     gap: 10px;
   }
@@ -253,9 +363,8 @@ body {
   }
 
   .headerButtonsContainer {
-    justify-content: center;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
   }
 
   .headerButton {
@@ -282,42 +391,6 @@ body {
   }
 }
 
-@media (max-width: 1200px) {
-  .bodyContainer {
-    margin: 20px 20px 40px 20px;
-    padding: 5px 20px 20px 20px;
-  }
-}
-
-.modalHeader {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.modalHeader h2 {
-  margin-top: 0px;
-}
-
-.modalClose {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-
-  background: none;
-  border: none;
-  color: white;
-  font-size: 26px;
-  cursor: pointer;
-  line-height: 1;
-  padding: 0;
-  z-index: 10;
-}
-
-.modalClose:hover {
-  color: #ff4646d7;
-}
-
 @media (max-width: 500px) {
   .modalHeader {
     flex-direction: column;
@@ -326,98 +399,8 @@ body {
   }
 
   .modalClose {
-    position: absolute;
     top: -10px;
     left: 0;
     font-size: 24px;
   }
-}
-
-.jobDetails li {
-  line-height: 1.5;
-  margin-bottom: 8px;
-}
-
-.jobDetails li:last-child {
-  margin-bottom: 0;
-}
-
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2px; /* fine-tune this */
-}
-
-.infoIcon {
-  display: flex; /* better than inline-flex here */
-  align-items: center;
-  justify-content: center;
-
-  width: 18px;
-  height: 18px;
-
-  font-size: 11px; /* slightly smaller for better centering */
-  line-height: 1; /* prevents vertical shift */
-
-  border-radius: 50%;
-  border: 1px solid #5969cd;
-  color: #5969cd;
-
-  transform-origin: center; /* ensures clean scaling */
-  transition:
-    transform 0.15s ease,
-    background-color 0.15s ease;
-}
-
-.clickable:hover .infoIcon {
-  transform: scale(1.2);
-  background-color: rgba(89, 105, 205, 0.1);
-}
-
-.infoIconWrapper {
-  position: relative;
-  display: inline-flex;
-}
-
-/* Tooltip text */
-.tooltipText {
-  position: absolute;
-  bottom: 130%; /* above the icon */
-  left: 50%;
-  transform: translateX(-50%);
-
-  background-color: #1b1b25;
-  color: white;
-  font-size: 11px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  white-space: nowrap;
-
-  opacity: 0;
-  pointer-events: none;
-
-  transition:
-    opacity 0.15s ease,
-    transform 0.15s ease;
-  transform: translateX(-50%) translateY(5px);
-}
-
-/* Tooltip arrow */
-.tooltipText::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-
-  border-width: 5px;
-  border-style: solid;
-  border-color: #1b1b25 transparent transparent transparent;
-}
-
-/* Show on hover */
-.infoIconWrapper:hover .tooltipText {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
 }
