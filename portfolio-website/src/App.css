@@ -404,3 +404,112 @@ body {
     font-size: 24px;
   }
 }
+
+/* ── Portfolio ───────────────────────────────────────────── */
+
+.photoGrid {
+  columns: 3;
+  column-gap: 12px;
+}
+
+.photoItem {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #11111a;
+}
+
+.photoItem img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.photoItem:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.8);
+}
+
+.lightboxBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxContent {
+  max-width: min(90vw, 1000px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.lightboxContent img {
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.lightboxNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.07);
+  border: none;
+  color: white;
+  font-size: 40px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightboxNav:hover {
+  background: rgba(89, 105, 205, 0.4);
+}
+
+.lightboxPrev {
+  left: 20px;
+}
+.lightboxNext {
+  right: 20px;
+}
+
+.lightboxCounter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #4b4b63;
+  font-size: 10pt;
+}
+
+@media (max-width: 900px) {
+  .photoGrid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .photoGrid {
+    columns: 1;
+  }
+  .lightboxNav {
+    display: none;
+  }
+}
