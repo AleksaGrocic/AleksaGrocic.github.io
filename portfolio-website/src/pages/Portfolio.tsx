@@ -6,9 +6,9 @@ interface Photo {
 }
 
 interface PortfolioData {
-  photos: Photo[];
-  title?: string;
-  subtitle?: string;
+  photos: {
+    columns: Photo[][];
+  };
 }
 
 export default function Portfolio() {
@@ -22,14 +22,17 @@ export default function Portfolio() {
       .catch((err) => console.error("Failed to load portfolio data:", err));
   }, []);
 
+  // Flat list for lightbox navigation
+  const allPhotos = data ? data.photos.columns.flat() : [];
+
   const navigate = useCallback(
     (dir: 1 | -1) => {
-      if (selectedPhoto === null || !data) return;
+      if (selectedPhoto === null) return;
       setSelectedPhoto(
-        (selectedPhoto + dir + data.photos.length) % data.photos.length,
+        (selectedPhoto + dir + allPhotos.length) % allPhotos.length,
       );
     },
-    [selectedPhoto, data],
+    [selectedPhoto, allPhotos],
   );
 
   useEffect(() => {
@@ -48,23 +51,33 @@ export default function Portfolio() {
     <>
       <div className="bodyContainer">
         <div className="photoGrid">
-          {data.photos.map((photo, i) => (
-            <div
-              key={i}
-              className="photoItem"
-              onClick={() => setSelectedPhoto(i)}
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt ?? `Photo ${i + 1}`}
-                loading="lazy"
-              />
+          {data.photos.columns.map((column, colIndex) => (
+            <div key={colIndex} className="photoColumn">
+              {column.map((photo, photoIndex) => {
+                const flatIndex =
+                  data.photos.columns
+                    .slice(0, colIndex)
+                    .reduce((acc, col) => acc + col.length, 0) + photoIndex;
+                return (
+                  <div
+                    key={photoIndex}
+                    className="photoItem"
+                    onClick={() => setSelectedPhoto(flatIndex)}
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt ?? `Photo ${flatIndex + 1}`}
+                      loading="lazy"
+                    />
+                  </div>
+                );
+              })}
             </div>
           ))}
         </div>
       </div>
 
-      {selectedPhoto !== null && data.photos[selectedPhoto] && (
+      {selectedPhoto !== null && allPhotos[selectedPhoto] && (
         <div
           className="lightboxBackdrop"
           onClick={() => setSelectedPhoto(null)}
@@ -80,13 +93,11 @@ export default function Portfolio() {
           </button>
           <div className="lightboxContent" onClick={(e) => e.stopPropagation()}>
             <img
-              src={data.photos[selectedPhoto].src}
-              alt={
-                data.photos[selectedPhoto].alt ?? `Photo ${selectedPhoto + 1}`
-              }
+              src={allPhotos[selectedPhoto].src}
+              alt={allPhotos[selectedPhoto].alt ?? `Photo ${selectedPhoto + 1}`}
             />
-            {data.photos[selectedPhoto].alt && (
-              <p className="aboutCardYears">{data.photos[selectedPhoto].alt}</p>
+            {allPhotos[selectedPhoto].alt && (
+              <p className="aboutCardYears">{allPhotos[selectedPhoto].alt}</p>
             )}
           </div>
           <button
@@ -102,7 +113,7 @@ export default function Portfolio() {
             ⨯
           </button>
           <span className="lightboxCounter">
-            {selectedPhoto + 1} / {data.photos.length}
+            {selectedPhoto + 1} / {allPhotos.length}
           </span>
         </div>
       )}

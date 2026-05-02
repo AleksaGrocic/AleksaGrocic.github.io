@@ -31,6 +31,10 @@ body {
   max-width: 800px;
 }
 
+.homeBodyContainer p + p {
+  margin-top: 16px;
+}
+
 .bodyContainer p {
   margin-top: 0;
 }
@@ -408,8 +412,15 @@ body {
 /* ── Portfolio ───────────────────────────────────────────── */
 
 .photoGrid {
-  columns: 3;
-  column-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.photoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .photoItem {
@@ -477,6 +488,7 @@ body {
   align-items: center;
   justify-content: center;
   transition: background 0.2s ease;
+  padding-bottom: 10px;
 }
 
 .lightboxNav:hover {
